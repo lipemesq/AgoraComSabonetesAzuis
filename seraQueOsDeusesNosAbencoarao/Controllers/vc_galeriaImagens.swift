@@ -14,7 +14,7 @@ private let id_cel_imagem = "id_imagem"
 // id das telas
 private let id_vc_detalhes = "id_detalhes"
 
-class vc_galeriaImagens: UICollectionViewController {
+class vc_galeriaImagens: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     // O controle com as cartas
     var ctrl_dados : ControleDeDados!
@@ -25,6 +25,7 @@ class vc_galeriaImagens: UICollectionViewController {
     var cartas_selecionadas = [Carta] ()
     // Vou tentar fazer um hash disso
     var hash_selecionadas : [Bool] = [false]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,38 @@ class vc_galeriaImagens: UICollectionViewController {
         cancelaSelecionadas()
         limpaSelecionadas()
         atualizaBotoes()
+    }
+    
+    
+    // Deixa o usuario pegar uma foto da galeria
+    // Precisa dar permissão em info.plist
+    func imagemDaGaleria () {
+        let imagem = UIImagePickerController()
+        imagem.delegate = self
+        
+        imagem.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagem.allowsEditing = false
+        print("VAI GALERIA!")
+        self.present(imagem, animated: true) {
+            // Completion
+        }
+    }
+    
+    
+    // Controlador para pegar imagens da galeria. É chamada automaticamente.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let imagem = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            print("DEU CERRTO< ADDENDO")
+            ctrl_dados.cartas.append(Carta(id: "um_ID", imagem: imagem))
+            self.collectionView.reloadData()
+        }
+        else {
+            // Print Error, invalid format
+            print("Formato zoouy")
+        }
+        
+        self.dismiss(animated: true, completion: nil) // No completion?
     }
     
     
@@ -140,8 +173,8 @@ class vc_galeriaImagens: UICollectionViewController {
             selecionando = false
             atualizaBotoes()
         }
-        else {   // Adicionar
-            
+        else {   // Adicionar carta
+            imagemDaGaleria()
         }
     }
     

@@ -13,6 +13,7 @@ class vc_editarNota: UIViewController {
     
     // A nota que está editando
     var nota : Nota!
+    var hid : String!
     
     // Text Field onde é possivel editar a nota
     @IBOutlet weak var txf_editarTexto: UITextView!
@@ -25,7 +26,7 @@ class vc_editarNota: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        v_moldura.hero.id = "texto"
+        v_moldura.hero.id = hid
         
         // Vem e volta por fade. Não sei se isso faz diferença
         self.hero.modalAnimationType = .fade
@@ -34,6 +35,13 @@ class vc_editarNota: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(UIKeyboardWillShow), name: UIApplication.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(UIKeyboardWillHide), name: UIApplication.keyboardWillHideNotification, object: nil)
 
+    }
+    
+    
+    // Pra mudar a HeroID da view antes de começar as animações
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        v_moldura.hero.id = hid
     }
     
     

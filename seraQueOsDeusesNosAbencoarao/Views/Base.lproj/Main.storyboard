@@ -335,17 +335,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-zm-Tcf" userLabel="v_img">
                                 <rect key="frame" x="0.0" y="44" width="414" height="409"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xi9-Ix-f3G" userLabel="img">
+                                    <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xi9-Ix-f3G" userLabel="img">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="imagem"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Xi9-Ix-f3G" firstAttribute="centerY" secondItem="9Zo-zm-Tcf" secondAttribute="centerY" id="YbR-oS-Dbk"/>
                                     <constraint firstItem="Xi9-Ix-f3G" firstAttribute="centerX" secondItem="9Zo-zm-Tcf" secondAttribute="centerX" id="aTe-3X-J79"/>
                                     <constraint firstItem="Xi9-Ix-f3G" firstAttribute="width" secondItem="9Zo-zm-Tcf" secondAttribute="width" id="kU5-6p-Kdi"/>
                                     <constraint firstItem="Xi9-Ix-f3G" firstAttribute="height" secondItem="9Zo-zm-Tcf" secondAttribute="height" id="kxy-eE-bZZ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bUu-Ep-fFA" appends="YES" id="L7c-79-tUr"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -371,8 +384,72 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elv-fu-cH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bUu-Ep-fFA">
+                    <connections>
+                        <action selector="gestoToque:" destination="HPP-dr-UbG" id="pDr-UV-vAH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="608.69565217391312" y="877.90178571428567"/>
+        </scene>
+        <!--Vc zoom Imagem-->
+        <scene sceneID="Y8u-AJ-yid">
+            <objects>
+                <viewController storyboardIdentifier="id_zoomImg" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bkg-8D-1zJ" customClass="vc_zoomImagem" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scP-du-dji">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="7" translatesAutoresizingMaskIntoConstraints="NO" id="T2l-WW-c3p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HBe-uy-sBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="imagem"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HBe-uy-sBD" secondAttribute="bottom" id="AZE-CS-aba"/>
+                                    <constraint firstItem="HBe-uy-sBD" firstAttribute="width" secondItem="T2l-WW-c3p" secondAttribute="width" id="Jpb-EU-7nR"/>
+                                    <constraint firstItem="HBe-uy-sBD" firstAttribute="leading" secondItem="T2l-WW-c3p" secondAttribute="leading" id="W1Z-X7-s9t"/>
+                                    <constraint firstItem="HBe-uy-sBD" firstAttribute="top" secondItem="T2l-WW-c3p" secondAttribute="top" id="j5w-aJ-Qsj"/>
+                                    <constraint firstAttribute="trailing" secondItem="HBe-uy-sBD" secondAttribute="trailing" id="l2a-nb-cP2"/>
+                                    <constraint firstItem="HBe-uy-sBD" firstAttribute="height" secondItem="T2l-WW-c3p" secondAttribute="height" id="pGU-6N-YgS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zAj-YU-Zr2" firstAttribute="bottom" secondItem="T2l-WW-c3p" secondAttribute="bottom" id="3DV-bZ-Y0D"/>
+                            <constraint firstItem="T2l-WW-c3p" firstAttribute="top" secondItem="zAj-YU-Zr2" secondAttribute="top" id="4H0-Go-q9r"/>
+                            <constraint firstItem="zAj-YU-Zr2" firstAttribute="trailing" secondItem="T2l-WW-c3p" secondAttribute="trailing" id="BAi-dW-qoL"/>
+                            <constraint firstItem="T2l-WW-c3p" firstAttribute="leading" secondItem="zAj-YU-Zr2" secondAttribute="leading" id="PW2-AZ-oKT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zAj-YU-Zr2"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="img_imagem" destination="HBe-uy-sBD" id="qoM-Ok-vTX"/>
+                        <outlet property="scv_scroll" destination="T2l-WW-c3p" id="kgo-aT-ocn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wan-55-wac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="1682"/>
         </scene>
         <!--Vc editar Nota-->
         <scene sceneID="9J6-rA-nPy">
