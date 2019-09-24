@@ -21,6 +21,17 @@ class cel_notaDetalhes: UITableViewCell {
     // Texto da nota
     @IBOutlet weak var lbl_texto: UILabel!
     
+    @IBOutlet weak var txf_mural: UITextView!
+    
+    
+    var minHeight: CGFloat?
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+        guard let minHeight = minHeight else { return size }
+        return CGSize(width: size.width, height: max(size.height, minHeight))
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

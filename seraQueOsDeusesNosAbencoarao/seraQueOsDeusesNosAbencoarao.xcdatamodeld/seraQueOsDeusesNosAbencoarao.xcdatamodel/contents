@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pdata_carta" representedClassName="Pdata_carta" syncable="YES" codeGenerationType="class">
+        <attribute name="id_imagem" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Pdata_cartaNaMesa" representedClassName="Pdata_cartaNaMesa" syncable="YES" codeGenerationType="class">
+        <attribute name="altura" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id_carta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_imagem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_mesa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="largura" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pos_x" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pos_y" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Pdata_mesa" representedClassName="Pdata_mesa" syncable="YES" codeGenerationType="class">
+        <attribute name="id_mesa" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Pdata_nota" representedClassName="Pdata_nota" syncable="YES" codeGenerationType="class">
+        <attribute name="cor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id_imagem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_nota" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="texto" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="Pdata_carta" positionX="54" positionY="153" width="128" height="60"/>
+        <element name="Pdata_cartaNaMesa" positionX="9" positionY="108" width="128" height="165"/>
+        <element name="Pdata_mesa" positionX="9" positionY="108" width="128" height="60"/>
+        <element name="Pdata_nota" positionX="63" positionY="162" width="128" height="105"/>
     </elements>
 </model>

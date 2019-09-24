@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HDJ-xd-onP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Frs-iO-yhu">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -154,10 +154,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Imagens-->
         <scene sceneID="siN-PG-3a0">
             <objects>
-                <navigationController id="HDJ-xd-onP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="id_navGaleria" id="HDJ-xd-onP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Imagens" id="Ucr-Vu-go6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctF-38-agR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,10 +174,183 @@
             </objects>
             <point key="canvasLocation" x="-2229" y="878"/>
         </scene>
+        <!--Painéis-->
+        <scene sceneID="U6A-kA-YUu">
+            <objects>
+                <navigationController id="QcM-KL-jxm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Painéis" id="wd5-jK-Q8l"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8OC-Bt-1aU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="jc1-Gf-nxm" kind="relationship" relationship="rootViewController" id="qbe-8B-ZTG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrR-Of-DwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2551" y="2012"/>
+        </scene>
+        <!--Expo de Mesas-->
+        <scene sceneID="4BU-CK-i3q">
+            <objects>
+                <collectionViewController storyboardIdentifier="pow" title="Expo de Mesas" id="jc1-Gf-nxm" customClass="vc_expoPaineis" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aco-EP-AJq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ixO-bF-8sg">
+                            <size key="itemSize" width="133" height="135"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="id_cel_mesa" id="6ZT-Ec-OPY" customClass="cel_mesa" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8Z-Yo-zcu">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D62-3W-JM0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D62-3W-JM0" firstAttribute="centerY" secondItem="T8Z-Yo-zcu" secondAttribute="centerY" id="FzJ-Jc-Xcg"/>
+                                                <constraint firstItem="D62-3W-JM0" firstAttribute="width" secondItem="T8Z-Yo-zcu" secondAttribute="width" id="Rcn-HC-u5P"/>
+                                                <constraint firstItem="D62-3W-JM0" firstAttribute="height" secondItem="T8Z-Yo-zcu" secondAttribute="height" id="WH1-AH-6mx"/>
+                                                <constraint firstItem="D62-3W-JM0" firstAttribute="centerX" secondItem="T8Z-Yo-zcu" secondAttribute="centerX" id="sZp-kh-Pbz"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="T8Z-Yo-zcu" firstAttribute="width" secondItem="6ZT-Ec-OPY" secondAttribute="width" id="1cd-an-0WE"/>
+                                    <constraint firstItem="T8Z-Yo-zcu" firstAttribute="centerY" secondItem="6ZT-Ec-OPY" secondAttribute="centerY" id="Lkl-hi-CS3"/>
+                                    <constraint firstItem="T8Z-Yo-zcu" firstAttribute="height" secondItem="6ZT-Ec-OPY" secondAttribute="height" id="Nb0-Kw-KoE"/>
+                                    <constraint firstItem="T8Z-Yo-zcu" firstAttribute="centerX" secondItem="6ZT-Ec-OPY" secondAttribute="centerX" id="dLd-4d-3KR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="img_icone" destination="D62-3W-JM0" id="Uff-c0-c7K"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="jc1-Gf-nxm" id="Fn5-6r-ceL"/>
+                            <outlet property="delegate" destination="jc1-Gf-nxm" id="pnc-Kd-ANv"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Painéis" id="kEW-k0-vwY"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hq6-0w-30N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1368.1159420289855" y="2011.6071428571427"/>
+        </scene>
+        <!--Vc mesa-->
+        <scene sceneID="BWO-pQ-Bpf">
+            <objects>
+                <viewController storyboardIdentifier="id_mesa" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uBW-RY-52T" customClass="vc_mesa" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="7ex-pc-hLt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="-1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhK-0Y-bMj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1uU-ZS-Nir" appends="YES" id="3hg-Ua-ZtA"/>
+                                    <outletCollection property="gestureRecognizers" destination="hHN-mT-8dO" appends="YES" id="HwZ-1X-S7R"/>
+                                </connections>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-dJ-eUc">
+                                <rect key="frame" x="0.0" y="851" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="lqd-2K-fVp"/>
+                                    <barButtonItem systemItem="trash" id="MEz-I0-p6k">
+                                        <connections>
+                                            <action selector="botaoEsquerdo:" destination="uBW-RY-52T" id="fOz-cn-EjJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xXV-CI-3qd"/>
+                                    <barButtonItem title="Adicionar" systemItem="add" id="LzZ-n9-gr7">
+                                        <connections>
+                                            <action selector="botaoDireito:" destination="uBW-RY-52T" id="H9r-Cu-u3y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="z4r-Bh-cpA"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="KhK-0Y-bMj" firstAttribute="centerY" secondItem="ulw-Zt-ztE" secondAttribute="centerY" id="4kI-ig-Lf5"/>
+                            <constraint firstItem="KhK-0Y-bMj" firstAttribute="height" secondItem="ulw-Zt-ztE" secondAttribute="height" id="cKB-sF-mSk"/>
+                            <constraint firstItem="KhK-0Y-bMj" firstAttribute="centerX" secondItem="ulw-Zt-ztE" secondAttribute="centerX" id="cfP-30-vpf"/>
+                            <constraint firstItem="KhK-0Y-bMj" firstAttribute="width" secondItem="ulw-Zt-ztE" secondAttribute="width" id="sUZ-LK-x25"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ulw-Zt-ztE"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="btn_botaoEsquerdo" destination="MEz-I0-p6k" id="fSv-Gr-uac"/>
+                        <outlet property="tb_toolbar" destination="FRR-dJ-eUc" id="ikb-Lu-6Fl"/>
+                        <outlet property="v_conteudo" destination="KhK-0Y-bMj" id="Cnl-Zg-vzF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxn-sd-ZLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1uU-ZS-Nir">
+                    <connections>
+                        <action selector="tapGesture:" destination="uBW-RY-52T" id="pTk-xd-6lj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="hHN-mT-8dO">
+                    <connections>
+                        <action selector="pinchGesture:" destination="uBW-RY-52T" id="stC-Pc-Bio"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-165.21739130434784" y="2011.6071428571427"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ADJ-Ag-RuZ">
+            <objects>
+                <tabBarController id="Frs-iO-yhu" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xQM-rh-J33">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="HDJ-xd-onP" kind="relationship" relationship="viewControllers" id="q0f-fW-nDD"/>
+                        <segue destination="QcM-KL-jxm" kind="relationship" relationship="viewControllers" id="arr-Ed-EOp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4YT-OU-9Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4697" y="1544"/>
+        </scene>
         <!--Imagens-->
         <scene sceneID="r2n-p0-DC1">
             <objects>
-                <collectionViewController id="exj-o0-M2c" customClass="vc_galeriaImagens" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="vc_galeria" id="exj-o0-M2c" customClass="vc_galeriaImagens" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZLr-ao-Xth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,15 +374,22 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dj0-nu-Ubk" userLabel="img">
                                                     <rect key="frame" x="0.0" y="0.0" width="209" height="298"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="dj0-nu-Ubk" firstAttribute="centerY" secondItem="msN-ZL-y2X" secondAttribute="centerY" id="2Gh-Cl-lzM"/>
                                                 <constraint firstItem="dj0-nu-Ubk" firstAttribute="centerX" secondItem="msN-ZL-y2X" secondAttribute="centerX" id="Gtj-GS-mKL"/>
                                                 <constraint firstItem="dj0-nu-Ubk" firstAttribute="width" secondItem="msN-ZL-y2X" secondAttribute="width" id="J0E-hN-Ylu"/>
                                                 <constraint firstItem="dj0-nu-Ubk" firstAttribute="height" secondItem="msN-ZL-y2X" secondAttribute="height" id="oFW-h9-Ay5"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                 </view>
@@ -218,28 +399,31 @@
                                     <constraint firstItem="msN-ZL-y2X" firstAttribute="centerY" secondItem="zgu-OM-lDV" secondAttribute="centerY" id="rWW-zP-4MZ"/>
                                     <constraint firstItem="msN-ZL-y2X" firstAttribute="height" secondItem="zgu-OM-lDV" secondAttribute="height" id="xDq-lP-6rc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="img_imagem" destination="dj0-nu-Ubk" id="fFX-Wa-QS8"/>
                                     <outlet property="v_viewImagem" destination="msN-ZL-y2X" id="fEr-RM-DQw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="exj-o0-M2c" id="jKF-6i-BzM"/>
                             <outlet property="delegate" destination="exj-o0-M2c" id="vTt-Ef-IMv"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Imagens" id="lQo-DR-WpX">
-                        <barButtonItem key="leftBarButtonItem" title="Selecionar" id="YSG-oT-MWL">
-                            <connections>
-                                <action selector="botaoEsquerdo:" destination="exj-o0-M2c" id="niz-9Z-uC9"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TV4-jW-b0j"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="btn_botao_esquerdo" destination="YSG-oT-MWL" id="cMM-9S-EgM"/>
-                    </connections>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUh-xU-lHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,14 +437,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neF-6V-Irm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neF-6V-Irm">
                                 <rect key="frame" x="0.0" y="453" width="414" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="eni-yS-ahn" userLabel="pezinho">
-                                    <rect key="frame" x="0.0" y="195" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="168" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDA-nA-V13" userLabel="Adicionar Nota">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDA-nA-V13" userLabel="Adicionar Nota">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <state key="normal" title="Adicionar nota">
                                                 <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -279,9 +463,9 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="id_nota" rowHeight="167" id="cor-15-7xa" userLabel="cel_nota" customClass="cel_notaDetalhes" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="167"/>
+                                        <rect key="frame" x="0.0" y="1" width="414" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cor-15-7xa" id="6RU-yJ-Rni" userLabel="v_nota">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cor-15-7xa" id="6RU-yJ-Rni" userLabel="v_nota">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -293,27 +477,26 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZa-0L-HoE">
-                                                    <rect key="frame" x="18" y="18" width="378" height="131"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Label">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="17"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-P2-Zeb">
+                                                    <rect key="frame" x="12" y="12" width="390" height="143"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yRc-Xu-aUr" firstAttribute="width" secondItem="6RU-yJ-Rni" secondAttribute="width" constant="-24" id="2PP-Ta-aLb"/>
-                                                <constraint firstItem="HZa-0L-HoE" firstAttribute="centerY" secondItem="yRc-Xu-aUr" secondAttribute="centerY" id="NEa-xi-wL8"/>
-                                                <constraint firstItem="HZa-0L-HoE" firstAttribute="width" secondItem="yRc-Xu-aUr" secondAttribute="width" constant="-12" id="PGQ-Xc-rag"/>
-                                                <constraint firstItem="HZa-0L-HoE" firstAttribute="centerX" secondItem="yRc-Xu-aUr" secondAttribute="centerX" id="TTH-hL-sfF"/>
-                                                <constraint firstItem="HZa-0L-HoE" firstAttribute="height" secondItem="yRc-Xu-aUr" secondAttribute="height" constant="-12" id="VhF-xC-w5K"/>
                                                 <constraint firstItem="yRc-Xu-aUr" firstAttribute="centerX" secondItem="6RU-yJ-Rni" secondAttribute="centerX" id="Z4e-3t-GWK"/>
+                                                <constraint firstItem="hzg-P2-Zeb" firstAttribute="width" secondItem="yRc-Xu-aUr" secondAttribute="width" id="aa8-fo-VVs"/>
+                                                <constraint firstItem="hzg-P2-Zeb" firstAttribute="height" secondItem="yRc-Xu-aUr" secondAttribute="height" id="dHq-W0-p3b"/>
                                                 <constraint firstItem="yRc-Xu-aUr" firstAttribute="height" secondItem="6RU-yJ-Rni" secondAttribute="height" constant="-24" id="gGk-Kb-DEi"/>
+                                                <constraint firstItem="hzg-P2-Zeb" firstAttribute="centerY" secondItem="yRc-Xu-aUr" secondAttribute="centerY" id="joj-mi-Sl5"/>
+                                                <constraint firstItem="hzg-P2-Zeb" firstAttribute="centerX" secondItem="yRc-Xu-aUr" secondAttribute="centerX" id="km3-gP-bIE"/>
                                                 <constraint firstItem="yRc-Xu-aUr" firstAttribute="centerY" secondItem="6RU-yJ-Rni" secondAttribute="centerY" id="liR-QB-4R5"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -326,31 +509,52 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="lbl_texto" destination="HZa-0L-HoE" id="uqu-uH-Fnj"/>
+                                            <outlet property="txf_mural" destination="hzg-P2-Zeb" id="KHi-r7-aHI"/>
                                             <outlet property="v_fundoNota" destination="yRc-Xu-aUr" id="rli-pB-FO8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-zm-Tcf" userLabel="v_img">
                                 <rect key="frame" x="0.0" y="44" width="414" height="409"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xi9-Ix-f3G" userLabel="img">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="4" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIU-au-Q6H">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xi9-Ix-f3G" userLabel="img">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="imagem"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Xi9-Ix-f3G" firstAttribute="leading" secondItem="xIU-au-Q6H" secondAttribute="leading" id="402-5B-ppf"/>
+                                            <constraint firstItem="Xi9-Ix-f3G" firstAttribute="width" secondItem="xIU-au-Q6H" secondAttribute="width" id="95J-c9-isS"/>
+                                            <constraint firstItem="Xi9-Ix-f3G" firstAttribute="height" secondItem="xIU-au-Q6H" secondAttribute="height" id="TuH-kE-Bk7"/>
+                                            <constraint firstItem="Xi9-Ix-f3G" firstAttribute="top" secondItem="xIU-au-Q6H" secondAttribute="top" id="UQE-qg-eB5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xi9-Ix-f3G" secondAttribute="trailing" id="b3B-OE-FPU"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xi9-Ix-f3G" secondAttribute="bottom" id="raE-ZD-ckT"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="imagem"/>
                                         </userDefinedRuntimeAttributes>
-                                    </imageView>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="Xi9-Ix-f3G" firstAttribute="centerY" secondItem="9Zo-zm-Tcf" secondAttribute="centerY" id="YbR-oS-Dbk"/>
-                                    <constraint firstItem="Xi9-Ix-f3G" firstAttribute="centerX" secondItem="9Zo-zm-Tcf" secondAttribute="centerX" id="aTe-3X-J79"/>
-                                    <constraint firstItem="Xi9-Ix-f3G" firstAttribute="width" secondItem="9Zo-zm-Tcf" secondAttribute="width" id="kU5-6p-Kdi"/>
-                                    <constraint firstItem="Xi9-Ix-f3G" firstAttribute="height" secondItem="9Zo-zm-Tcf" secondAttribute="height" id="kxy-eE-bZZ"/>
+                                    <constraint firstItem="xIU-au-Q6H" firstAttribute="height" secondItem="9Zo-zm-Tcf" secondAttribute="height" id="Cwb-eA-Jzt"/>
+                                    <constraint firstItem="xIU-au-Q6H" firstAttribute="width" secondItem="9Zo-zm-Tcf" secondAttribute="width" id="af4-mW-0Gq"/>
+                                    <constraint firstItem="xIU-au-Q6H" firstAttribute="centerX" secondItem="9Zo-zm-Tcf" secondAttribute="centerX" id="ny8-o8-u7v"/>
+                                    <constraint firstItem="xIU-au-Q6H" firstAttribute="centerY" secondItem="9Zo-zm-Tcf" secondAttribute="centerY" id="zgU-M4-7x4"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -379,6 +583,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="img_imagemCarta" destination="Xi9-Ix-f3G" id="xDI-jx-TB6"/>
+                        <outlet property="scv_scroll" destination="xIU-au-Q6H" id="XJ9-2t-GWS"/>
                         <outlet property="tv_notas" destination="neF-6V-Irm" id="iTB-1p-TwD"/>
                         <outlet property="v_molduraImagem" destination="9Zo-zm-Tcf" id="0xI-nf-wXc"/>
                     </connections>
@@ -449,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wan-55-wac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="1682"/>
+            <point key="canvasLocation" x="-1368" y="60"/>
         </scene>
         <!--Vc editar Nota-->
         <scene sceneID="9J6-rA-nPy">
@@ -460,10 +665,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-HR-b6j">
-                                <rect key="frame" x="12" y="27" width="390" height="896"/>
+                                <rect key="frame" x="12" y="5" width="390" height="896"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Lorem ipsum." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ebR-hh-D83">
-                                        <rect key="frame" x="12" y="85" width="366" height="726"/>
+                                        <rect key="frame" x="12" y="63" width="366" height="770"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -483,6 +688,53 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="texto"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btL-F1-lQr">
+                                <rect key="frame" x="0.0" y="826" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" image="Icon-Small" id="Vfy-mj-Zaq">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="03f-SL-cLd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qwP-Ai-qcf"/>
+                                    <barButtonItem tag="1" title="Item" image="Icon-Small" id="Ytr-rv-wcc">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="RqF-Bo-oL7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="M0k-R6-S7p"/>
+                                    <barButtonItem tag="2" title="Item" image="Icon-Small" id="6uW-P4-5L2">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="u9S-08-F88"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hfv-gl-gvS"/>
+                                    <barButtonItem tag="3" title="Item" image="Icon-Small" id="5Xo-uF-ycR">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="pKW-pf-hMP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="k7u-ZL-pmF"/>
+                                    <barButtonItem tag="4" title="Item" image="Icon-Small" id="zLA-M4-lLD">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="hvp-Zz-sW4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0Yf-M5-lwD"/>
+                                    <barButtonItem tag="5" title="Item" image="Icon-Small" id="0NQ-wO-hUO">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="8hf-6p-lgg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qb7-pu-N9S"/>
+                                    <barButtonItem tag="6" title="Item" image="Icon-Small" id="DT6-mD-oFj">
+                                        <connections>
+                                            <action selector="botao_cor:" destination="cpf-Ze-aEO" id="0cJ-s6-yOE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -499,31 +751,101 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="tb_toolbar" destination="btL-F1-lQr" id="JAh-pd-2TV"/>
                         <outlet property="txf_editarTexto" destination="ebR-hh-D83" id="kdi-1I-4XC"/>
                         <outlet property="v_moldura" destination="NG2-HR-b6j" id="Mns-Tq-WwM"/>
+                        <outletCollection property="btn_cores" destination="Vfy-mj-Zaq" collectionClass="NSMutableArray" id="dBN-8y-dHU"/>
+                        <outletCollection property="btn_cores" destination="Ytr-rv-wcc" collectionClass="NSMutableArray" id="I37-4J-b27"/>
+                        <outletCollection property="btn_cores" destination="6uW-P4-5L2" collectionClass="NSMutableArray" id="ENI-3L-AlT"/>
+                        <outletCollection property="btn_cores" destination="5Xo-uF-ycR" collectionClass="NSMutableArray" id="ueY-a4-wgM"/>
+                        <outletCollection property="btn_cores" destination="zLA-M4-lLD" collectionClass="NSMutableArray" id="b2R-cb-3PC"/>
+                        <outletCollection property="btn_cores" destination="0NQ-wO-hUO" collectionClass="NSMutableArray" id="gwo-Fy-CK3"/>
+                        <outletCollection property="btn_cores" destination="DT6-mD-oFj" collectionClass="NSMutableArray" id="Bj8-9K-aPt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQo-5o-jEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2963.768115942029" y="877.90178571428567"/>
+            <point key="canvasLocation" x="2962.3188405797105" y="877.90178571428567"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fGH-En-amj">
+        <!--Vc escolher Imagem-->
+        <scene sceneID="NHO-Pf-kp1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdD-Zi-zIi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q0W-7V-AsM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController storyboardIdentifier="id_escolheImagem" id="poL-dn-aq4" customClass="vc_escolherImagem" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xjg-7B-Tea">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX6-Qk-cLz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Escolha uma imagem" id="HHt-tr-IMf">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="IM2-an-wpw">
+                                            <connections>
+                                                <action selector="devolveImagem" destination="poL-dn-aq4" id="q5e-aM-q9z"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VMf-aY-m4U">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XEl-Od-9j7">
+                                    <size key="itemSize" width="270" height="303"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="id_celulaPegarImagem" id="jje-Qg-WG2" customClass="cel_escolherImagem" customModule="seraQueOsDeusesNosAbencoarao" customModuleProvider="target">
+                                        <rect key="frame" x="72" y="0.0" width="270" height="303"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="303"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-Dz-qQA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="303"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="2tR-Dz-qQA" firstAttribute="centerY" secondItem="jje-Qg-WG2" secondAttribute="centerY" id="2L6-BC-Ikh"/>
+                                            <constraint firstItem="2tR-Dz-qQA" firstAttribute="centerX" secondItem="jje-Qg-WG2" secondAttribute="centerX" id="EFs-mm-dE5"/>
+                                            <constraint firstItem="2tR-Dz-qQA" firstAttribute="height" secondItem="jje-Qg-WG2" secondAttribute="height" id="SWW-gV-Ddq"/>
+                                            <constraint firstItem="2tR-Dz-qQA" firstAttribute="width" secondItem="jje-Qg-WG2" secondAttribute="width" id="xfz-LY-BTn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="img_imagem" destination="2tR-Dz-qQA" id="ZS4-u4-9Gs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TX6-Qk-cLz" firstAttribute="trailing" secondItem="VMf-aY-m4U" secondAttribute="trailing" id="38b-HT-YCd"/>
+                            <constraint firstItem="VMf-aY-m4U" firstAttribute="width" secondItem="Xjg-7B-Tea" secondAttribute="width" id="50j-XS-fAB"/>
+                            <constraint firstItem="VMf-aY-m4U" firstAttribute="top" secondItem="TX6-Qk-cLz" secondAttribute="bottom" id="9M1-Ho-5WB"/>
+                            <constraint firstAttribute="bottom" secondItem="VMf-aY-m4U" secondAttribute="bottom" id="Aso-Le-PZy"/>
+                            <constraint firstItem="TX6-Qk-cLz" firstAttribute="leading" secondItem="VMf-aY-m4U" secondAttribute="leading" id="Jt4-wy-IS1"/>
+                            <constraint firstItem="TX6-Qk-cLz" firstAttribute="top" secondItem="1v1-cM-vuZ" secondAttribute="top" id="SyS-8q-yKP"/>
+                            <constraint firstItem="TX6-Qk-cLz" firstAttribute="centerX" secondItem="1v1-cM-vuZ" secondAttribute="centerX" id="bO1-nw-9BN"/>
+                            <constraint firstItem="VMf-aY-m4U" firstAttribute="centerX" secondItem="1v1-cM-vuZ" secondAttribute="centerX" id="lr2-gm-WKu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1v1-cM-vuZ"/>
+                    </view>
                     <connections>
-                        <segue destination="cpf-Ze-aEO" kind="relationship" relationship="rootViewController" id="vSb-M1-4w1"/>
+                        <outlet property="barra" destination="TX6-Qk-cLz" id="zH7-Kc-it6"/>
+                        <outlet property="collectionView" destination="VMf-aY-m4U" id="Q5m-6q-GSR"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfr-WW-FbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLw-zD-iKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053.6231884057975" y="877.90178571428567"/>
+            <point key="canvasLocation" x="1644.9275362318842" y="2011.6071428571427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-Small" width="29" height="29"/>
+    </resources>
 </document>
